@@ -1,0 +1,151 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Custom Colors
+-------------------------------------------------- */
+/* grey-one */
+.text-grey-one {
+  color: #e4e3e3 !important;
+}
+
+.border-grey-one {
+  border-color: #e4e3e3 !important;
+}
+
+.bg-grey-one {
+  background-color: #e4e3e3 !important;
+}
+
+/* blue-one */
+.text-blue-one {
+    color: #84a9ac !important;
+}
+
+.border-blue-one {
+    border-color: #84a9ac !important;
+}
+
+.bg-blue-one {
+    background-color: #84a9ac !important;
+}
+
+/* blue-two */
+.text-blue-two {
+    color: #3b6978 !important;
+}
+
+.border-blue-two {
+    border-color: #3b6978 !important;
+}
+
+.bg-blue-two {
+    background-color: #3b6978 !important;
+}
+
+/* blue-three */
+.text-blue-three {
+    color: #204051 !important;
+}
+
+.border-blue-three {
+    border-color: #204051 !important;
+}
+
+.bg-blue-three {
+    background-color: #204051 !important;
+}
+
+/* orange-one */
+.text-orange-one {
+    color: #ff5722 !important;
+}
+
+.border-orange-one {
+    border-color: #ff5722 !important;
+}
+
+.bg-orange-one {
+    background-color: #ff5722 !important;
+}
+
+/* orange-two */
+.text-orange-two {
+    color: #dd2c00 !important;
+}
+
+.border-orange-two {
+    border-color: #dd2c00 !important;
+}
+
+.bg-orange-two {
+    background-color: #dd2c00 !important;
+}
