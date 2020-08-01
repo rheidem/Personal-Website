@@ -177,3 +177,9 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.my-portrait {
+    display:block;
+    margin:auto;
+    width: 80%;
+}
