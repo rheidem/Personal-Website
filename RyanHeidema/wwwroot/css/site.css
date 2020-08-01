@@ -16,9 +16,6 @@ a.navbar-brand {
 } 
 
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
 
 .btn-primary {
   color: #fff;
@@ -76,12 +73,6 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
-}
-
-.nav-bar-logo {
-  height: 50px;
-  width: 50px;
-  float: left;
 }
 
 /* Custom Colors
@@ -164,12 +155,14 @@ body {
     background-color: #dd2c00 !important;
 }
 
-.full-height {
-  height: 100%;
-}
-
 .display-5 {
   font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-6 {
+  font-size: 2.0rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -179,7 +172,35 @@ html {
 }
 
 .my-portrait {
-    display:block;
-    margin:auto;
-    width: 80%;
+  display:block;
+  margin:auto;
+  width: 80%;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.chevron-border {
+  border: 2px solid;
+  border-radius: 50%;
+  border-color: #343a40;
+}
+
+a {
+  text-decoration: none;
+  color: #ff5722;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #343a40;
+}
+
+ul {
+  list-style-type: none;
 }
