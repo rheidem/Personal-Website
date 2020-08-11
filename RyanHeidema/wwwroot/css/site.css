@@ -226,6 +226,10 @@ label:focus,
     -webkit-box-shadow: none !important;
 }
 
+.border-orange-one {
+  border-color: #ff5722 !important;
+}
+
 #stars {
   width: 1px;
   height: 1px;
