@@ -45,19 +45,17 @@ namespace BoggleSolverCSharp
             return WordsSet.Contains(new Word(text));
         }
 
-        // Sort the wordsList according to Comp c and print to cout
-        public void Print()
+        // Sort the wordsList according to Comp c 
+        public List<Word> Output()
         {
+            List<Word> words = new List<Word>();
+            words.Capacity = WordsSet.Count;
+
             foreach(Word w in WordsSet) {
-                if (w.Score == 1)
-                {
-                    Console.WriteLine($"{w.Text}: {w.Score} point");
-                }
-                else
-                {
-                    Console.WriteLine($"{w.Text}: {w.Score} points");
-                }
+                words.Add(w);
             }
+
+            return words;
         }
     }
 }

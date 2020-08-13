@@ -1,9 +1,10 @@
 @page
+@using BoggleSolverCSharp;
 @model RyanHeidema.Pages.Projects.IndexModel
 @{
     ViewData["Title"] = "Ryan Heidema - Projects";
 }
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-orange-one">
     <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,6 +41,9 @@
                 <div class="mb-3">
                     <div class="row mb-3">
                         <div class="col">
+                            <div class="text-center">
+                                <p class="h5"><u>Input Characters</u></p>
+                            </div>
                             <form method="post">
                                 <div class="row py-1">
                                     <div class="col pr-0">
@@ -97,16 +101,41 @@
                                         <input type="text" class="form-control" maxLength="1" asp-for="charList.let33">
                                     </div>
                                 </div>
-                                <div class="text-center pt-2">
-                                    <input type="submit" value="Solve" class="btn btn-outline-dark rounded-0 mx-2" />
-                                    <input type="reset" value="Reset" class="btn btn-outline-dark rounded-0 mx-2" />
+                                <div class="form-group row pt-2">
+                                    <div class="col-sm-4">
+                                        <label class="control-label">Min Word Length:</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" asp-for="minSize">
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+                                        <input type="submit" value="Solve" class="btn btn-outline-dark rounded-0 mx-2" />
+                                        <input type="reset" value="Reset" class="btn btn-outline-dark rounded-0 mx-2" />
+                                    </div>
                                 </div>
                             </form>
                         </div>
                         <div class="col">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id numquam veritatis vitae quos fugiat eius quidem eveniet quasi quis quo eum aliquam, cumque obcaecati doloremque omnis quaerat ea dolorum? Enim eligendi eveniet exercitationem in consequuntur dolor molestias alias perspiciatis inventore?
+                            <div class="text-center">
+                                <p class="h5"><u>Results</u></p>
+                            </div>
+                            @if(Model.Words != null)
+                            {
+                                <p class="text-left h6">@Model.Words.Count words, @Model.totalScore points</p>
+                                <div class="row">
+                                    @foreach (Word w in Model.Words)
+                                    {
+                                        <p> @w.Text, @w.Score | </p>
+                                    }
+                                </div>
+                            }
                         </div>
                     </div>
+                    <hr />
                     <div class="row">
                         <div class="col">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id numquam veritatis vitae quos fugiat eius quidem eveniet quasi quis quo eum aliquam, cumque obcaecati doloremque omnis quaerat ea dolorum? Enim eligendi eveniet exercitationem in consequuntur dolor molestias alias perspiciatis inventore?

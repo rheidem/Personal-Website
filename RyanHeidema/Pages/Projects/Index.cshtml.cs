@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BoggleSolverCSharp;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -58,15 +59,29 @@ namespace RyanHeidema.Pages.Projects
     {
         [BindProperty]
         public charList charList { get; set; }
+
+        [BindProperty]
+        public int minSize { get; set; }
+
+        public int totalScore { get; set; }
+
+        public List<Word> Words { get; set; }
         public void OnGet()
         {
 
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
             List<char> letters = charList.toList();
-            
+
+            Board b1 = new Board(minSize, letters);
+            Solutions s1 = b1.Solve("dictionary.txt");
+
+            totalScore = s1.TotalScore;
+            Words = s1.Output();
+
+            return Page();
         }
     }
 }
