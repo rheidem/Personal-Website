@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
+using System.ComponentModel.DataAnnotations;
 
 namespace RyanHeidema.Pages
 {
@@ -15,16 +16,16 @@ namespace RyanHeidema.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string EmailName { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true), DataType(DataType.EmailAddress)]
         public string FromAddress { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string EmailSubject { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string EmailBody { get; set; }
 
 
@@ -49,7 +50,7 @@ namespace RyanHeidema.Pages
             {
                 Email email = new Email(EmailName, FromAddress, EmailSubject, EmailBody);
                 email.SendEmail();
-                return Page();
+                return RedirectToPage("./EmailConfirmation");
             }
         }
     }
