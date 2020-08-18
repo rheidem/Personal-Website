@@ -207,6 +207,10 @@ ul {
   list-style-type: none;
 }
 
+.thick-border {
+  border-bottom: 3px solid #ff5722 !important;
+}
+
 textarea:hover, 
 input:hover, 
 textarea:active, 
