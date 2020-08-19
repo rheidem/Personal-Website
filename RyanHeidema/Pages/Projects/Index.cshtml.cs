@@ -60,9 +60,6 @@ namespace RyanHeidema.Pages.Projects
         [BindProperty]
         public charList charList { get; set; }
 
-        [BindProperty]
-        public int minSize { get; set; }
-
         public int totalScore { get; set; }
 
         public List<Word> Words { get; set; }
@@ -83,7 +80,7 @@ namespace RyanHeidema.Pages.Projects
                 }
             }
 
-            Board b1 = new Board(minSize, letters);
+            Board b1 = new Board(3, letters);
             Solutions s1 = b1.Solve("dictionary.txt");
 
             totalScore = s1.TotalScore;

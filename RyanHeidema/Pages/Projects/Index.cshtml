@@ -37,9 +37,10 @@
             <div class="card-body">
                 <div class="mb-3">
                     <div class="row mb-3">
-                        <div class="col-sm-6">
+                        <div class="col-2"></div>
+                        <div class="col-8">
                             <div class="text-center">
-                                <p class="h5"><u>Input Characters</u></p>
+                                <p class="h5"><u>Input Letters</u></p>
                             </div>
                             <form method="post">
                                 <div class="row py-1">
@@ -99,39 +100,47 @@
                                     </div>
                                 </div>
                                 <div class="form-group row pt-2">
-                                    <div class="col-sm-4">
-                                        <label class="control-label">Min Word Length:</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <select class="form-control" asp-for="minSize">
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-6 text-right">
+                                    <div class="col text-center">
                                         <input type="submit" value="Solve" class="btn btn-outline-dark rounded-0 mx-2" />
                                         <a asp-page="./Index" class="btn btn-outline-dark rounded-0 mx-2">Reset</a>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="text-center">
-                                <p class="h5"><u>Results</u></p>
-                            </div>
-                            @if(Model.Words != null)
-                            {
-                                <p class="text-left h6">@Model.Words.Count words, @Model.totalScore points</p>
-                                <div class="row">
-                                    @foreach (Word w in Model.Words)
-                                    {
-                                        <p> @w.Text, @w.Score | </p>
-                                    }
-                                </div>
-                            }
-                        </div>
+                        <div class="col-2"></div>
                     </div>
+                    @if(Model.Words != null)
+                    {
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="text-center">
+                                    <p class="h5"><u>Results</u></p>
+                                </div>
+                                    <p class="text-left h6 pb-2 text-orange-one">@Model.Words.Count words, @Model.totalScore points</p>
+                                    <div class="row px-3">
+                                        @for(int i = 0; i < @Model.Words.Count(); ++i)
+                                        {
+                                            switch (@Model.Words.ElementAt(i).Score)
+                                                {
+                                                    case 1:
+                                                        <p> @Model.Words.ElementAt(i).Text (@Model.Words.ElementAt(i).Score pt)</p>
+                                                        break;
+                                                    case 11:
+                                                        <p class="text-orange-one"> @Model.Words.ElementAt(i).Text (@Model.Words.ElementAt(i).Score pts)</p>
+                                                        break;
+                                                    default:
+                                                        <p> @Model.Words.ElementAt(i).Text (@Model.Words.ElementAt(i).Score pts)</p>
+                                                        break;
+                                                }
+                                            @if(i != @Model.Words.Count() - 1)
+                                            {
+                                                <p>,&nbsp;</p>
+                                            }
+                                        }
+                                    </div>
+                            </div>
+                        </div>
+                    }
                     <hr />
                     <div class="row">
                         <div class="col">
@@ -143,7 +152,7 @@
                                     Originally, this was written in C++, but I adapted it to C# to interface with this website, which you can use above.
                                 </p>
                                 <p>
-                                    Check out the GitHub to get in depth coverage of the algorithm I implemented and the data structures I used to accomplish this!
+                                    Check out the GitHub to get in-depth coverage of the algorithm I implemented and the data structures I used to accomplish this!
                                 </p>
                             </div>
                         </div>
