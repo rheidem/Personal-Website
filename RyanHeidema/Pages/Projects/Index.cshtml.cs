@@ -75,6 +75,14 @@ namespace RyanHeidema.Pages.Projects
         {
             List<char> letters = charList.toList();
 
+            foreach(char c in letters) 
+            {
+                if(!char.IsLetter(c))
+                {
+                    return Page();
+                }
+            }
+
             Board b1 = new Board(minSize, letters);
             Solutions s1 = b1.Solve("dictionary.txt");
 
