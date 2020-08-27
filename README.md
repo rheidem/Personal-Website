@@ -33,6 +33,8 @@ Something I wanted to add to this website was an easy way for users to contact m
 
 ### Home Page
 
+![Image of Home Page](https://github.com/rheidem/Personal-Website/blob/master/Screen%20Shot%202020-08-27%20at%2011.01.54%20AM.png)
+
 I also wanted to add some type of parallax background or animated home page to the website, so I did this as well. When you go on the site, you can see the home page has an animated star background with three different layers of different-sized stars. This was accomplished with the help of many YouTube videos, a C++ random pixel generator for up to 4K displays and a lot of tweaking.
 
 Although this works, there is room for improvement to scale up this implementation for any size screen and I would like to explore this further in the future.
